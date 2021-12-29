@@ -24,7 +24,7 @@ async def channel_post(client: Client, message: Message):
     converted_id = post_message.message_id * abs(client.db_channel.id)
     string = f"get-{converted_id}"
     base64_string = await encode(string)
-    link = f"https://vivurl.com/st?api=f23e27e6360c1fda3c7dfc26bed733961a84252d&url=https://t.me/{client.username}?start={base64_string}"
+    link = f"<code>https://vivurl.com/st?api=f23e27e6360c1fda3c7dfc26bed733961a84252d&url=https://t.me/{client.username}?start={base64_string}</code>"
 
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://vivurl.com/st?api=f23e27e6360c1fda3c7dfc26bed733961a84252d&url=https://telegram.me/share/url?url={link}')]])
 
