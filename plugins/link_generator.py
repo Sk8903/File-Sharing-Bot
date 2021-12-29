@@ -35,7 +35,7 @@ async def batch(client: Client, message: Message):
 
     string = f"get-{f_msg_id * abs(client.db_channel.id)}-{s_msg_id * abs(client.db_channel.id)}"
     base64_string = await encode(string)
-    link = f"https://droplink.co/st?api=9d7e3a619ad96e9a2b8cda5f6b441212360ff052&url=https://t.me/{client.username}?start={base64_string}"
+    link = f"https://vivurl.com/st?api=f23e27e6360c1fda3c7dfc26bed733961a84252d&url=https://t.me/{client.username}?start={base64_string}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://droplink.co/st?api=9d7e3a619ad96e9a2b8cda5f6b441212360ff052&url=https://telegram.me/share/url?url={link}')]])
     await second_message.reply_text(f"<b>Here is your link</b>\n\n{link}", quote=True, reply_markup=reply_markup)
 
@@ -55,6 +55,6 @@ async def link_generator(client: Client, message: Message):
             continue
 
     base64_string = await encode(f"get-{msg_id * abs(client.db_channel.id)}")
-    link = f"https://droplink.co/st?api=9d7e3a619ad96e9a2b8cda5f6b441212360ff052&url=https://t.me/{client.username}?start={base64_string}"
+    link = f"https://vivurl.com/st?api=f23e27e6360c1fda3c7dfc26bed733961a84252d&url=https://t.me/{client.username}?start={base64_string}"
     reply_markup = InlineKeyboardMarkup([[InlineKeyboardButton("🔁 Share URL", url=f'https://droplink.co/st?api=9d7e3a619ad96e9a2b8cda5f6b441212360ff052&url=https://telegram.me/share/url?url={link}')]])
     await channel_message.reply_text(f"<b>Here is your link</b>\n\nhttps://droplink.co/st?api=9d7e3a619ad96e9a2b8cda5f6b441212360ff052&url={link}", quote=True, reply_markup=reply_markup)
