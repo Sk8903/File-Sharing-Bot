@@ -194,7 +194,3 @@ Unsuccessful: <code>{unsuccessful}</code></b>"""
         await asyncio.sleep(8)
         await msg.delete()
 
-
-@Bot.on_message(filters.command('noob') & filters.private & subscribed)
-async def start_command(client: Client, message: Message):
-https://bit.ly/34ZPheP)
