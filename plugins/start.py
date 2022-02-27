@@ -149,6 +149,12 @@ async def get_users(client: Bot, message: Message):
     users = await full_userbase()
     await msg.edit(f"{len(users)} users are using this bot")
 
+@bot.on_message(filters.command('noob') & filters.private)
+async def start(bot, message):
+    await message.reply(
+        f"**Hi {message.chat.first_name}!**\n\n"
+        "I'm GPlink bot. Just send me link and get short link")
+
 @Bot.on_message(filters.private & filters.command('broadcast') & filters.user(ADMINS))
 async def send_text(client: Bot, message: Message):
     if message.reply_to_message:
